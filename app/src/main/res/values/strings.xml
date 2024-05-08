@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Amir BP</string>
+    <string name="title_activity_contact_add">ContactAddActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="case_number">মামলা নাম্বার</string>
+    <string name="name">নাম</string>
+    <string name="identity">পরিচয়ের ধরন</string>
+    <string name="rank">পদবী</string>
+    <string name="bp_number">বিপি নং</string>
+    <string name="nid">NID নাম্বার</string>
+    <string name="birth_day">জন্ম তারিখ :</string>
+    <string name="bank_account_number">ব্যাংক একাউন্ট নাম্বার</string>
+    <string name="mobile_number">মোবাইল নাম্বার</string>
+    <string name="mobile_number2">মোবাইল নাম্বার ২</string>
+    <string name="mobile_number3">মোবাইল নাম্বার ৩</string>
+    <string name="fathers_name">পিতার নাম</string>
+    <string name="mother_husband_wife_name">মাতা / স্বামী / স্ত্রী এর নাম</string>
+    <string name="post_office">পোস্ট অফিস</string>
+    <string name="thana">থানা</string>
+    <string name="dristrict">জেলা</string>
+    <string name="old_workplace1">পূর্ববর্তী কর্মস্থল</string>
+    <string name="old_workplace2">পূর্ববর্তী কর্মস্থল ২</string>
+    <string name="job_joning_date">চাকরিতে যোগদান এর তারিখ :</string>
+    <string name="current_workplace">বর্তমান কর্মস্থল</string>
+    <string name="current_workplace_joining">বর্তমান কর্মস্থল এ যোগদান :</string>
+    <string name="save">সেভ</string>
+    <string name="reset">রিসেট</string>
+    <string name="facebook_id">ফেসবুক আইডি</string>
+    <string name="imo_id">ইমু আইডি</string>
+</resources>
