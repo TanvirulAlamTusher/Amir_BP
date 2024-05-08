@@ -4,12 +4,18 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.example.amirbp.Model.Contact;
 import com.example.amirbp.Utils.AppUtils;
+import com.example.amirbp.ViewModel.ContactViewModel;
+import com.example.amirbp.ViewModel.ViewModelFactory;
 import com.example.amirbp.databinding.ActivityContactAddBinding;
 
 public class ContactAddActivity extends AppCompatActivity {
     ActivityContactAddBinding binding;
+    private ContactViewModel contactViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +25,44 @@ public class ContactAddActivity extends AppCompatActivity {
 
         topbar();
         allButtonTask();
+        ViewModelFactory viewModelFactory = new ViewModelFactory.Builder()
+                .add(ContactViewModel.class, new ContactViewModel(getApplication())).build();
 
+        contactViewModel = new ViewModelProvider(ContactAddActivity.this, viewModelFactory).get(ContactViewModel.class);
+        observedata();
+
+        contactViewModel.callContactsListFromDB();
+
+
+    }
+
+    private void observedata() {
+        contactViewModel.getContactsList().observe(ContactAddActivity.this,contacts -> {
+            if (contacts != null) {
+                // here the contact list come
+            }
+        });
+        contactViewModel.getIs_inserted().observe(ContactAddActivity.this,aBoolean -> {
+            if (aBoolean != null) {
+                if (aBoolean) {
+                    Toast.makeText(this, "Contact add successfully", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        contactViewModel.getIs_delete().observe(ContactAddActivity.this,aBoolean -> {
+            if (aBoolean != null) {
+                if (aBoolean) {
+                    Toast.makeText(this, "Contact delete successfully", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        contactViewModel.getIs_updated().observe(ContactAddActivity.this,aBoolean -> {
+            if (aBoolean != null) {
+                if (aBoolean) {
+                    Toast.makeText(this, "Contact update successfully", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private void allButtonTask() {
@@ -54,14 +97,14 @@ public class ContactAddActivity extends AppCompatActivity {
              binding.nameEditTextId.requestFocus();
              binding.nameEditTextId.setError("Name required");
              return;
-         }else {
-             //insert data to database here
-
-
-             resetAllField();
-             Toast.makeText(this, "Contact add successfully", Toast.LENGTH_SHORT).show();
-
          }
+             //insert data to database here
+            Contact contact = new Contact(caseNumber,name,indentityType,rank,bpNumber,nid,birthDay,bankAccountNumber,mobileNumber,mobileNumber2,mobileNumber3,fathersName,mothersHusbandWifeName,village,postOffice,thana,district,date_of_joining_job,oldWorksPlace,oldWorksPlace2,date_of_joining_current_workplace,currentWorksPlace,facebookId,imoid,whatsappId);
+            contactViewModel.insertContact(contact);
+            // resetAllField();
+
+
+
 
         });
         binding.resetButtonId.setOnClickListener(view -> {
