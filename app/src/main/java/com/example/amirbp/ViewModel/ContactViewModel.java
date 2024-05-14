@@ -18,6 +18,8 @@ public class ContactViewModel extends ViewModel {
     private  MutableLiveData<Boolean> is_updated = new MutableLiveData<>();
     private MutableLiveData<Boolean> is_delete = new MutableLiveData<>();
 
+    private MutableLiveData<Contact> contactInfo = new MutableLiveData<>();
+
     public ContactViewModel(Application application) {
       this.context = application;
 
@@ -37,6 +39,10 @@ public class ContactViewModel extends ViewModel {
 
     public MutableLiveData<List<Contact>> getContactsList() {
         return contactsList;
+    }
+
+    public MutableLiveData<Contact> getContactInfoById() {
+        return contactInfo;
     }
 
     public void callContactsListFromDB() {
@@ -85,5 +91,12 @@ public class ContactViewModel extends ViewModel {
             e.printStackTrace();
         }
 
+    }
+
+    /////////////////////////
+    public void getContactsListById( int id) {
+        AppDb db = AppDb.getInstance(context);
+       Contact contacts = db.contactDao().getContactById(id);
+       contactInfo.setValue(contacts);
     }
 }

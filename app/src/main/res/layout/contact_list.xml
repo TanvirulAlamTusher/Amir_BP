@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llayout_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@color/purple_500"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:weightSum="10"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="9.5"
+                android:layout_height="wrap_content"
+                android:weightSum="10"
+                android:orientation="vertical"
+                android:layout_marginStart="5dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/ador_samibold"
+                        android:textAlignment="center"
+                        />
+                    <TextView
+                        android:id="@+id/name_tv_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/ador_samibold"
+                        android:textAlignment="center"
+                        />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phone_number"
+                        android:textSize="16dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/ador_samibold"
+                        android:textAlignment="center"
+                        />
+                    <TextView
+                        android:id="@+id/phoneNum_tv_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/ador_samibold"
+                        android:textAlignment="center"
+                        />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    android:gravity="center"
+
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="6"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+                            android:text="@string/thana"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/ador_samibold"
+
+                            />
+                        <TextView
+                            android:id="@+id/thana_tv_id"
+                            android:layout_width="0dp"
+                            android:layout_weight="2.3"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/ador_bold"
+
+                            />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.8"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dristrict"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/ador_samibold"
+                            android:textAlignment="center"
+                            />
+                        <TextView
+                            android:id="@+id/district_tv_id"
+                            android:layout_width="0dp"
+                            android:layout_weight="2.2"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/ador_bold"
+
+                            />
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                >
+                <ImageView
+                    android:id="@+id/more_btn_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_more_vert_24"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+</LinearLayout>

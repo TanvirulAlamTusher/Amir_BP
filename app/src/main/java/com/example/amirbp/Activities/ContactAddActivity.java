@@ -101,7 +101,7 @@ public class ContactAddActivity extends AppCompatActivity {
              //insert data to database here
             Contact contact = new Contact(caseNumber,name,indentityType,rank,bpNumber,nid,birthDay,bankAccountNumber,mobileNumber,mobileNumber2,mobileNumber3,fathersName,mothersHusbandWifeName,village,postOffice,thana,district,date_of_joining_job,oldWorksPlace,oldWorksPlace2,date_of_joining_current_workplace,currentWorksPlace,facebookId,imoid,whatsappId);
             contactViewModel.insertContact(contact);
-            // resetAllField();
+            resetAllField();
 
 
 

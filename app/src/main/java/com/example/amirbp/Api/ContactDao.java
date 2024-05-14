@@ -23,4 +23,7 @@ public interface ContactDao {
 
     @Update
     void updateContact(Contact contact);
+
+    @Query("SELECT * FROM Contact WHERE id = :id")
+    Contact getContactById(int id);
 }

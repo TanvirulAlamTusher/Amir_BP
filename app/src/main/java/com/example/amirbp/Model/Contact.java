@@ -106,18 +106,20 @@ public class Contact {
     @ColumnInfo(name = "facebook_id")
     public String facebook_id;
 
-    @Nullable
-    @ColumnInfo(name = "whatsapp_id")
-    public String whatsapp_id;
+
 
     @Nullable
     @ColumnInfo(name = "imo_id")
     public String imo_id;
 
+    @Nullable
+    @ColumnInfo(name = "whatsapp_id")
+    public String whatsapp_id;
+
     @ColumnInfo(name = "date", defaultValue = "CURRENT_TIMESTAMP")
     public Float date;
 
-    public Contact(@Nullable String case_number, String name, @Nullable String identity_type, @Nullable String rank, @Nullable String bp_number, @Nullable String nid, @Nullable String date_of_birth, @Nullable String bank_account_number, @Nullable String mobile_number, @Nullable String mobile_number_2, @Nullable String mobile_number_3, @Nullable String fathers_name, @Nullable String mother_husband_wife_name, @Nullable String village, @Nullable String post_office, @Nullable String thana, @Nullable String dristict, @Nullable String date_of_joining_job, @Nullable String old_workplace, @Nullable String old_workplace_2, @Nullable String date_of_joining_current_workplace, @Nullable String current_workplace, @Nullable String facebook_id, @Nullable String whatsapp_id, @Nullable String imo_id) {
+    public Contact(@Nullable String case_number, String name, @Nullable String identity_type, @Nullable String rank, @Nullable String bp_number, @Nullable String nid, @Nullable String date_of_birth, @Nullable String bank_account_number, @Nullable String mobile_number, @Nullable String mobile_number_2, @Nullable String mobile_number_3, @Nullable String fathers_name, @Nullable String mother_husband_wife_name, @Nullable String village, @Nullable String post_office, @Nullable String thana, @Nullable String dristict, @Nullable String date_of_joining_job, @Nullable String old_workplace, @Nullable String old_workplace_2, @Nullable String date_of_joining_current_workplace, @Nullable String current_workplace, @Nullable String facebook_id, @Nullable String imo_id, @Nullable String whatsapp_id) {
         this.case_number = case_number;
         this.name = name;
         this.identity_type = identity_type;
@@ -141,8 +143,16 @@ public class Contact {
         this.date_of_joining_current_workplace = date_of_joining_current_workplace;
         this.current_workplace = current_workplace;
         this.facebook_id = facebook_id;
-        this.whatsapp_id = whatsapp_id;
         this.imo_id = imo_id;
+        this.whatsapp_id = whatsapp_id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Nullable
