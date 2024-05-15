@@ -37,11 +37,6 @@ public class ContactAddActivity extends AppCompatActivity {
     }
 
     private void observedata() {
-        contactViewModel.getContactsList().observe(ContactAddActivity.this,contacts -> {
-            if (contacts != null) {
-                // here the contact list come
-            }
-        });
         contactViewModel.getIs_inserted().observe(ContactAddActivity.this,aBoolean -> {
             if (aBoolean != null) {
                 if (aBoolean) {
@@ -49,20 +44,7 @@ public class ContactAddActivity extends AppCompatActivity {
                 }
             }
         });
-        contactViewModel.getIs_delete().observe(ContactAddActivity.this,aBoolean -> {
-            if (aBoolean != null) {
-                if (aBoolean) {
-                    Toast.makeText(this, "Contact delete successfully", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        contactViewModel.getIs_updated().observe(ContactAddActivity.this,aBoolean -> {
-            if (aBoolean != null) {
-                if (aBoolean) {
-                    Toast.makeText(this, "Contact update successfully", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+
     }
 
     private void allButtonTask() {

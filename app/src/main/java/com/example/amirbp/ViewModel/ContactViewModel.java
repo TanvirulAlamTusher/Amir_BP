@@ -17,6 +17,7 @@ public class ContactViewModel extends ViewModel {
     private MutableLiveData<Boolean> is_inserted = new MutableLiveData<>();
     private  MutableLiveData<Boolean> is_updated = new MutableLiveData<>();
     private MutableLiveData<Boolean> is_delete = new MutableLiveData<>();
+    private MutableLiveData<Boolean> is_delete_by_id = new MutableLiveData<>();
 
     private MutableLiveData<Contact> contactInfo = new MutableLiveData<>();
 
@@ -35,6 +36,10 @@ public class ContactViewModel extends ViewModel {
 
     public MutableLiveData<Boolean> getIs_delete() {
         return is_delete;
+    }
+
+    public MutableLiveData<Boolean> getIs_delete_by_id() {
+        return is_delete_by_id;
     }
 
     public MutableLiveData<List<Contact>> getContactsList() {
@@ -65,7 +70,7 @@ public class ContactViewModel extends ViewModel {
 
 
     }
-    public void updateContact( Contact contact) {
+    public void updateContact(Contact contact) {
         try{
             is_updated.postValue(false);
             AppDb db = AppDb.getInstance(context);
@@ -93,10 +98,27 @@ public class ContactViewModel extends ViewModel {
 
     }
 
+
+
     /////////////////////////
     public void getContactsListById( int id) {
         AppDb db = AppDb.getInstance(context);
        Contact contacts = db.contactDao().getContactById(id);
        contactInfo.setValue(contacts);
+    }
+
+    public void deleteContactById(int id) {
+        try{
+            is_delete_by_id.postValue(false);
+            AppDb db = AppDb.getInstance(context);
+            db.contactDao().deleteContactById(id);
+            is_delete_by_id.postValue(true);
+            callContactsListFromDB();
+
+        }catch (Exception e){
+            is_delete_by_id.postValue(false);
+            e.printStackTrace();
+        }
+
     }
 }

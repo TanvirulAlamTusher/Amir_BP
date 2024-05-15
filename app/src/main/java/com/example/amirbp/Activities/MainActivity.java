@@ -65,20 +65,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        contactViewModel.getIs_delete().observe(MainActivity.this,aBoolean -> {
-            if (aBoolean != null) {
-                if (aBoolean) {
-                    Toast.makeText(this, "Contact delete successfully", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        contactViewModel.getIs_updated().observe(MainActivity.this,aBoolean -> {
-            if (aBoolean != null) {
-                if (aBoolean) {
-                    Toast.makeText(this, "Contact update successfully", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     private void loadContactList(List<Contact> contacts) {

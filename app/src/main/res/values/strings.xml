@@ -32,4 +32,8 @@
     <string name="contact_information">Contact Information</string>
     <string name="whatsappId">হোয়াটসএপ আইডি :</string>
     <string name="village">গ্রাম / ওয়ার্ড :</string>
+    <string name="warning">warning!!</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="update">Update</string>
+    <string name="cancle">cancle</string>
 </resources>

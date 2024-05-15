@@ -4,7 +4,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 @Entity
 public class Contact {
@@ -116,8 +119,11 @@ public class Contact {
     @ColumnInfo(name = "whatsapp_id")
     public String whatsapp_id;
 
-    @ColumnInfo(name = "date", defaultValue = "CURRENT_TIMESTAMP")
-    public Float date;
+
+    @ColumnInfo(name = "date")
+    public String date;
+    public Contact() {
+    }
 
     public Contact(@Nullable String case_number, String name, @Nullable String identity_type, @Nullable String rank, @Nullable String bp_number, @Nullable String nid, @Nullable String date_of_birth, @Nullable String bank_account_number, @Nullable String mobile_number, @Nullable String mobile_number_2, @Nullable String mobile_number_3, @Nullable String fathers_name, @Nullable String mother_husband_wife_name, @Nullable String village, @Nullable String post_office, @Nullable String thana, @Nullable String dristict, @Nullable String date_of_joining_job, @Nullable String old_workplace, @Nullable String old_workplace_2, @Nullable String date_of_joining_current_workplace, @Nullable String current_workplace, @Nullable String facebook_id, @Nullable String imo_id, @Nullable String whatsapp_id) {
         this.case_number = case_number;
@@ -145,6 +151,7 @@ public class Contact {
         this.facebook_id = facebook_id;
         this.imo_id = imo_id;
         this.whatsapp_id = whatsapp_id;
+        this.date = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.getDefault()).format(new Date());
     }
 
     public int getId() {
@@ -379,11 +386,11 @@ public class Contact {
         this.imo_id = imo_id;
     }
 
-    public Float getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Float date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

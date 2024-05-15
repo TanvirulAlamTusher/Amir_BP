@@ -47,14 +47,15 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         holder.binding.phoneNumTvId.setText(contactList.get(position).getMobile_number());
         holder.binding.thanaTvId.setText(contactList.get(position).getThana());
         holder.binding.districtTvId.setText(contactList.get(position).getDristict());
+       // holder.binding.dateTvId.setText( contactList.get(position).getDate());
 
-        holder.binding.moreBtnId.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-               view.startAnimation(animation);
-            }
-        });
+//        holder.binding.moreBtnId.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View view) {
+//               view.startAnimation(animation);
+//            }
+//        });
         holder.binding.llayoutId.setOnClickListener(v ->{
             v.startAnimation(animation);
             int contactId = contactList.get(position).getId();

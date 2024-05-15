@@ -70,7 +70,6 @@
                     android:gravity="center"
 
                     >
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -158,32 +157,48 @@
                     </LinearLayout>
 
 
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-
-                    </LinearLayout>
-
                 </LinearLayout>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    >-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="date :"-->
+<!--                        android:textSize="16dp"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:fontFamily="@font/ador_samibold"-->
+
+<!--                        />-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/date_tv_id"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="16dp"-->
+<!--                        android:layout_marginStart="5dp"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:fontFamily="@font/ador_samibold"-->
+<!--                        android:textAlignment="center"-->
+<!--                        />-->
+
+
+<!--                </LinearLayout>-->
 
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                >
-                <ImageView
-                    android:id="@+id/more_btn_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/baseline_more_vert_24"/>
-            </LinearLayout>
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="0.5"-->
+<!--                >-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/more_btn_id"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:src="@drawable/baseline_more_vert_24"/>-->
+<!--            </LinearLayout>-->
 
         </LinearLayout>
 
