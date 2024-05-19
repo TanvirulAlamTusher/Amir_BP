@@ -21,10 +21,10 @@ import java.util.List;
 
 public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.ViewHolder> {
 
-    private final Context context;
-    private final List<Contact> contactList;
+    private  Context context;
+    private  List<Contact> contactList;
 
-    private final Animation animation;
+    private  Animation animation;
     private AlertDialog alertDialog = null;
 
     public ContactListAdapter(Context context, List<Contact> contactList, Animation animation) {
@@ -66,7 +66,18 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
 
     @Override
     public int getItemCount() {
+        if(contactList == null){
+            return 0;
+        }
         return contactList.size();
+    }
+
+    public void filterList(List<Contact> filteredList) {
+        if(filteredList == null){
+            return;
+        }
+        contactList = filteredList;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

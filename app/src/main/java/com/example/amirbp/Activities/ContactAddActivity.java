@@ -25,6 +25,7 @@ public class ContactAddActivity extends AppCompatActivity {
 
         topbar();
         allButtonTask();
+
         ViewModelFactory viewModelFactory = new ViewModelFactory.Builder()
                 .add(ContactViewModel.class, new ContactViewModel(getApplication())).build();
 

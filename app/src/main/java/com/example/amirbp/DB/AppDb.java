@@ -8,10 +8,12 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.amirbp.Api.ContactDao;
+import com.example.amirbp.Api.NoteDao;
 import com.example.amirbp.Model.Contact;
+import com.example.amirbp.Model.Note;
 
 
-@Database(entities = {Contact.class}, version = 1, exportSchema = false)
+@Database(entities = {Contact.class, Note.class}, version = 1, exportSchema = false)
 public abstract class AppDb extends RoomDatabase {
 
     private static AppDb INSTANCE;
@@ -28,5 +30,6 @@ public abstract class AppDb extends RoomDatabase {
     }
 
     public abstract ContactDao contactDao();
+    public abstract NoteDao noteDao();
 
 }

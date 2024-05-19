@@ -107,7 +107,6 @@ public class EditContactActivity extends AppCompatActivity {
             contact.imo_id = imoid;
             contact.whatsapp_id = whatsappId;
             contactViewModel.updateContact(contact);
-            finish();
 
         });
         binding.resetButtonId.setOnClickListener(view -> {
@@ -174,6 +173,7 @@ public class EditContactActivity extends AppCompatActivity {
             if (aBoolean != null) {
                 if (aBoolean) {
                     Toast.makeText(this, "Contact update successfully", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
             }
         });

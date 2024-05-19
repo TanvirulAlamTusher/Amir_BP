@@ -75,7 +75,7 @@ public class ContactViewModel extends ViewModel {
             is_updated.postValue(false);
             AppDb db = AppDb.getInstance(context);
             db.contactDao().updateContact(contact);
-            is_inserted.postValue(true);
+            is_updated.postValue(true);
             callContactsListFromDB();
         }catch (Exception e){
             is_updated.postValue(false);
