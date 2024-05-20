@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -149,5 +150,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         contactViewModel.callContactsListFromDB();
+    }
+    @Override
+    public void onBackPressed() {
+        // Create a new dialog instance
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Exit Confirmation");
+        builder.setMessage("Are you sure you want to exit the app?");
+
+        // Set up the positive button
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Exit the activity
+                finish();
+            }
+        });
+
+        // Set up the negative button
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Cancel the dialog
+                dialog.cancel();
+            }
+        });
+
+        // Create and show the dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

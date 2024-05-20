@@ -19,7 +19,7 @@ public class NoteViewModel extends ViewModel {
     private  MutableLiveData<Boolean> is_updated = new MutableLiveData<>();
     private MutableLiveData<Boolean> is_delete = new MutableLiveData<>();
 
-//    private MutableLiveData<Contact> contactInfo = new MutableLiveData<>();
+    private MutableLiveData<Note> noteInfo = new MutableLiveData<>();
 
     public NoteViewModel(Application application) {
         this.context = application;
@@ -41,9 +41,9 @@ public class NoteViewModel extends ViewModel {
         return noteList;
     }
 
-//    public MutableLiveData<Contact> getContactInfoById() {
-//        return contactInfo;
-//    }
+    public MutableLiveData<Note> getContactInfoById() {
+        return noteInfo;
+    }
 
     public void callNoteListFromDB() {
         AppDb db = AppDb.getInstance(context);
@@ -65,7 +65,26 @@ public class NoteViewModel extends ViewModel {
 
 
     }
-    public void deleteContactById(int id) {
+    public void getNoteById( int id) {
+        AppDb db = AppDb.getInstance(context);
+       Note note= db.noteDao().getNoteById(id);
+        noteInfo.setValue(note);
+    }
+
+    public void updateNote(Note note) {
+        try{
+            is_updated.postValue(false);
+            AppDb db = AppDb.getInstance(context);
+            db.noteDao().updateNote(note);
+            is_updated.postValue(true);
+           callNoteListFromDB();
+        }catch (Exception e){
+            is_updated.postValue(false);
+            e.printStackTrace();
+        }
+
+    }
+    public void deleteNoteById(int id) {
         try{
             is_delete.postValue(false);
             AppDb db = AppDb.getInstance(context);

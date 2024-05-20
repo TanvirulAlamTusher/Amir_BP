@@ -7,7 +7,8 @@
    android:gravity="center"
     android:layout_margin="5dp"
     android:padding="10dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/layout_id">
     <TextView
         android:id="@+id/title_tv_id"
         android:layout_width="wrap_content"

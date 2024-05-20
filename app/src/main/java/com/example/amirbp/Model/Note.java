@@ -23,6 +23,9 @@ public class Note {
     @ColumnInfo(name = "date")
     public String date;
 
+    public Note() {
+    }
+
     public Note(String title, @Nullable String notes) {
         this.title = title;
         this.notes = notes;

@@ -74,6 +74,13 @@ public class NoteActivity extends AppCompatActivity {
                 }
             }
         });
+        noteViewModel.getIs_delete().observe(NoteActivity.this,aBoolean -> {
+            if (aBoolean != null) {
+                if (aBoolean) {
+                    Toast.makeText(this, "Notes delete successfully", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 
