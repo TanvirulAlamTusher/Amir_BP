@@ -2,7 +2,10 @@ package com.example.amirbp.Activities;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.drawable.Animatable;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -13,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.amirbp.R;
+import com.example.amirbp.Utils.AppUtils;
 import com.example.amirbp.ViewModel.ContactViewModel;
 import com.example.amirbp.ViewModel.ViewModelFactory;
 import com.example.amirbp.databinding.ActivityContactDetailsBinding;
@@ -21,16 +25,20 @@ public class ContactDetailsActivity extends AppCompatActivity {
      ActivityContactDetailsBinding binding;
     int contactId;
     private ContactViewModel contactViewModel;
+    private Animation animation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     binding = ActivityContactDetailsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        animation = AnimationUtils.loadAnimation(this, R.anim.click_animation);
+
         Intent intent = getIntent();
         contactId = intent.getIntExtra("contactId", -1);
 
         topbar();
+        allButtonTask();
 
         ViewModelFactory viewModelFactory = new ViewModelFactory.Builder()
                 .add(ContactViewModel.class, new ContactViewModel(getApplication())).build();
@@ -63,6 +71,33 @@ public class ContactDetailsActivity extends AppCompatActivity {
             return false;
         });
 
+    }
+
+    private void allButtonTask() {
+       binding.nidCopyBtnId.setOnClickListener(view -> {
+           view.startAnimation(animation);
+           AppUtils.copyText(this, binding.nidNumTvId.getText().toString());
+       });
+       binding.mobileNumberCopyBtnId.setOnClickListener(view -> {
+           view.startAnimation(animation);
+           AppUtils.copyText(this, binding.mobileNumberTvId.getText().toString());
+       });
+       binding.bankAccountNumberCopyBtnId.setOnClickListener(view -> {
+           view.startAnimation(animation);
+           AppUtils.copyText(this, binding.bankAccountNumberTvId.getText().toString());
+       });
+       binding.facebookIdCopyBtnId.setOnClickListener(view -> {
+           view.startAnimation(animation);
+           AppUtils.copyText(this, binding.facebookIdTvId.getText().toString());
+       });
+       binding.imoCopyBtnId.setOnClickListener(view -> {
+           view.startAnimation(animation);
+           AppUtils.copyText(this, binding.imoIdTvId.getText().toString());
+       });
+       binding.whatsappCopyBtnId.setOnClickListener(view -> {
+           view.startAnimation(animation);
+           AppUtils.copyText(this, binding.whatsappIdTvId.getText().toString());
+       });
     }
 
     private void observedata() {

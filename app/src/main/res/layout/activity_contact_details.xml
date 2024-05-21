@@ -166,9 +166,11 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="horizontal"
-             android:layout_margin="5dp">
+             android:layout_margin="5dp"
+             android:weightSum="6">
              <TextView
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1.2"
                  android:layout_height="wrap_content"
                  android:fontFamily="@font/ador_regular"
                  android:textColor="@color/purple_700"
@@ -176,13 +178,21 @@
                  android:text="@string/nid"/>
              <TextView
                  android:id="@+id/nid_num_tv_id"
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="4.2"
                  android:layout_height="wrap_content"
                  android:layout_marginStart="3sp"
                  android:fontFamily="@font/ador_samibold"
                  android:textColor="@color/purple_700"
                  android:textSize="18sp"
                  />
+             <ImageView
+                 android:id="@+id/nid_copy_btn_id"
+                 android:layout_width="0dp"
+                 android:layout_weight="0.6"
+                 android:layout_height="25dp"
+                 android:src="@drawable/copy_icon"
+                  />
          </LinearLayout>
          <View
              android:layout_width="match_parent"
@@ -218,9 +228,11 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="horizontal"
+             android:weightSum="6"
              android:layout_margin="5dp">
              <TextView
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="2.3"
                  android:layout_height="wrap_content"
                  android:fontFamily="@font/ador_regular"
                  android:textColor="@color/purple_700"
@@ -228,12 +240,20 @@
                  android:text="@string/bank_account_number"/>
              <TextView
                  android:id="@+id/bank_account_number_tv_id"
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="3.1"
                  android:layout_height="wrap_content"
                  android:layout_marginStart="3sp"
                  android:fontFamily="@font/ador_samibold"
                  android:textColor="@color/purple_700"
                  android:textSize="18sp"
+                 />
+             <ImageView
+                 android:id="@+id/bank_account_number_copy_btn_id"
+                 android:layout_width="0dp"
+                 android:layout_weight="0.6"
+                 android:layout_height="25dp"
+                 android:src="@drawable/copy_icon"
                  />
          </LinearLayout>
          <View
@@ -244,9 +264,11 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="horizontal"
+             android:weightSum="6"
              android:layout_margin="5dp">
              <TextView
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1.7"
                  android:layout_height="wrap_content"
                  android:fontFamily="@font/ador_regular"
                  android:textColor="@color/purple_700"
@@ -254,12 +276,20 @@
                  android:text="@string/mobile_number"/>
              <TextView
                  android:id="@+id/mobile_number_tv_id"
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="3.7"
                  android:layout_height="wrap_content"
                  android:layout_marginStart="3sp"
                  android:fontFamily="@font/ador_samibold"
                  android:textColor="@color/purple_700"
                  android:textSize="18sp"
+                 />
+             <ImageView
+                 android:id="@+id/mobile_number_copy_btn_id"
+                 android:layout_width="0dp"
+                 android:layout_weight="0.6"
+                 android:layout_height="25dp"
+                 android:src="@drawable/copy_icon"
                  />
          </LinearLayout>
          <View
@@ -611,9 +641,11 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="horizontal"
+             android:weightSum="6"
              android:layout_margin="5dp">
              <TextView
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1.6"
                  android:layout_height="wrap_content"
                  android:fontFamily="@font/ador_regular"
                  android:textColor="@color/purple_700"
@@ -621,12 +653,20 @@
                  android:text="@string/facebook_id"/>
              <TextView
                  android:id="@+id/facebook_id_tv_id"
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="3.8"
                  android:layout_height="wrap_content"
                  android:layout_marginStart="3sp"
                  android:fontFamily="@font/ador_samibold"
                  android:textColor="@color/purple_700"
                  android:textSize="18sp"
+                 />
+             <ImageView
+                 android:id="@+id/facebook_id_copy_btn_id"
+                 android:layout_width="0dp"
+                 android:layout_weight="0.6"
+                 android:layout_height="25dp"
+                 android:src="@drawable/copy_icon"
                  />
          </LinearLayout>
          <View
@@ -637,9 +677,11 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="horizontal"
+             android:weightSum="6"
              android:layout_margin="5dp">
              <TextView
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1.1"
                  android:layout_height="wrap_content"
                  android:fontFamily="@font/ador_regular"
                  android:textColor="@color/purple_700"
@@ -647,12 +689,20 @@
                  android:text="@string/imo_id"/>
              <TextView
                  android:id="@+id/imo_id_tv_id"
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="4.3"
                  android:layout_height="wrap_content"
                  android:layout_marginStart="3sp"
                  android:fontFamily="@font/ador_samibold"
                  android:textColor="@color/purple_700"
                  android:textSize="18sp"
+                 />
+             <ImageView
+                 android:id="@+id/imo_copy_btn_id"
+                 android:layout_width="0dp"
+                 android:layout_weight="0.6"
+                 android:layout_height="25dp"
+                 android:src="@drawable/copy_icon"
                  />
          </LinearLayout>
          <View
@@ -663,9 +713,11 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="horizontal"
+             android:weightSum="6"
              android:layout_margin="5dp">
              <TextView
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="1.9"
                  android:layout_height="wrap_content"
                  android:fontFamily="@font/ador_regular"
                  android:textColor="@color/purple_700"
@@ -673,12 +725,20 @@
                  android:text="@string/whatsappId"/>
              <TextView
                  android:id="@+id/whatsapp_id_tv_id"
-                 android:layout_width="wrap_content"
+                 android:layout_width="0dp"
+                 android:layout_weight="3.5"
                  android:layout_height="wrap_content"
                  android:layout_marginStart="3sp"
                  android:fontFamily="@font/ador_samibold"
                  android:textColor="@color/purple_700"
                  android:textSize="18sp"
+                 />
+             <ImageView
+                 android:id="@+id/whatsapp_copy_btn_id"
+                 android:layout_width="0dp"
+                 android:layout_weight="0.6"
+                 android:layout_height="25dp"
+                 android:src="@drawable/copy_icon"
                  />
          </LinearLayout>
          <View

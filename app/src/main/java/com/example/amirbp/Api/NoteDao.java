@@ -30,4 +30,7 @@ public interface NoteDao {
     //delete by id
     @Query("DELETE FROM Note WHERE id = :id")
     void deleteNoteById(int id);
+    //
+    @Query("SELECT COUNT(*) FROM Note WHERE Id = :Id")
+    int getNoteCountById(int Id);
 }

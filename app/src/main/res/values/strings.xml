@@ -46,4 +46,7 @@
     <string name="note">Note</string>
     <string name="edit_note">Edit Note</string>
     <string name="edit_title">Edit Title</string>
+    <string name="backup_restore_data">Backup/Restore Data</string>
+    <string name="backup_database">ব্যাকআপ ডাটাব্যাজ</string>
+    <string name="select_file">ফাইল সিলেক্ট করুন</string>
 </resources>

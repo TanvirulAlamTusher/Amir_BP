@@ -45,5 +45,7 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:$room_version")
     //lotti animation
     implementation ("com.airbnb.android:lottie:6.2.0")
+    //gson
+    implementation ("com.google.code.gson:gson:2.10.1")
 
 }

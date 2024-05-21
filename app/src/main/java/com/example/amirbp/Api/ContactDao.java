@@ -32,4 +32,8 @@ public interface ContactDao {
     void deleteContactById(int id);
     //update by id
 
+    //
+    @Query("SELECT COUNT(*) FROM Contact WHERE Id = :Id")
+    int getContactCountById(int Id);
+
 }

@@ -2,7 +2,11 @@ package com.example.amirbp.Activities;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.BackgroundColorSpan;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -41,8 +45,7 @@ public class NoteDetailsActivity extends AppCompatActivity {
         observedata();
         noteViewModel.getNoteById(noteId);
 
-
-
+        setupSearchView();
 
     }
     private void observedata() {
@@ -55,6 +58,43 @@ public class NoteDetailsActivity extends AppCompatActivity {
 
 
     }
+    private void setupSearchView() {
+        binding.searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                highlightText(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                highlightText(newText);
+                return false;
+            }
+        });
+    }
+
+    private void highlightText(String searchText) {
+        String originalText = binding.noteTextTvId.getText().toString();
+        if (searchText.isEmpty()) {
+            binding.noteTextTvId.setText(originalText);
+            return;
+        }
+
+        SpannableString spannableString = new SpannableString(originalText);
+        String lowerOriginalText = originalText.toLowerCase();
+        String lowerSearchText = searchText.toLowerCase();
+
+        int startIndex = lowerOriginalText.indexOf(lowerSearchText);
+        while (startIndex >= 0) {
+            int endIndex = startIndex + searchText.length();
+            spannableString.setSpan(new BackgroundColorSpan(Color.YELLOW), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            startIndex = lowerOriginalText.indexOf(lowerSearchText, endIndex);
+        }
+
+        binding.noteTextTvId.setText(spannableString);
+    }
+
     private void topbarTask() {
         binding.materialToolbar.setNavigationOnClickListener(view -> {
             finish();

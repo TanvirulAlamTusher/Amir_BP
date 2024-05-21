@@ -3,7 +3,9 @@
     <item android:title="Notes"
         android:id="@+id/note_id"/>
     <item android:title="Backup/Restore"
-        android:id="@+id/back_restore_id"/>
+        android:id="@+id/backup_restore_id"/>
+    <item android:title="Developer Info"
+        android:id="@+id/developer_idfo_id"/>
 
 
 </menu>

@@ -106,6 +106,10 @@ public class MainActivity extends AppCompatActivity {
 
                     return true;
                 }
+                if(item.getItemId() == R.id.backup_restore_id){
+                    startActivity(new Intent(MainActivity.this,BackupRestoreActivity.class));
+                    return true;
+                }
                 return false;
             }
         });
@@ -134,9 +138,18 @@ public class MainActivity extends AppCompatActivity {
     public void filterList(String text){
        List<Contact> filteredList = new ArrayList<>();
        for (Contact contact : contactList){
-           if(contact.getName().toLowerCase().contains(text.toLowerCase()) ||
-                   contact.getThana().toLowerCase().contains(text.toLowerCase())
-                  || contact.getDristict().toLowerCase().contains(text.toLowerCase())){
+           if(contact.getName().toLowerCase().contains(text.toLowerCase())
+                   || contact.getThana().toLowerCase().contains(text.toLowerCase())
+                   || contact.getDristict().toLowerCase().contains(text.toLowerCase())
+                   || contact.getCase_number().toLowerCase().contains(text.toLowerCase())
+                   || contact.getBp_number().toLowerCase().contains(text.toLowerCase())
+                   || contact.getMobile_number().toLowerCase().contains(text.toLowerCase())
+                   || contact.getCurrent_workplace().toLowerCase().contains(text.toLowerCase())
+                   || contact.getOld_workplace().toLowerCase().contains(text.toLowerCase())
+                   || contact.getOld_workplace_2().toLowerCase().contains(text.toLowerCase())
+
+           )
+           {
                filteredList.add(contact);
            }
        }
