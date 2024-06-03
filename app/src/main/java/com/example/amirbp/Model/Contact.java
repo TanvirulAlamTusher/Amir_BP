@@ -60,6 +60,10 @@ public class Contact {
     public String mobile_number_3;
 
     @Nullable
+    @ColumnInfo(name = "email")
+    public String email;
+
+    @Nullable
     @ColumnInfo(name = "fathers_name")
     public String fathers_name;
 
@@ -110,7 +114,6 @@ public class Contact {
     public String facebook_id;
 
 
-
     @Nullable
     @ColumnInfo(name = "imo_id")
     public String imo_id;
@@ -125,7 +128,7 @@ public class Contact {
     public Contact() {
     }
 
-    public Contact(@Nullable String case_number, String name, @Nullable String identity_type, @Nullable String rank, @Nullable String bp_number, @Nullable String nid, @Nullable String date_of_birth, @Nullable String bank_account_number, @Nullable String mobile_number, @Nullable String mobile_number_2, @Nullable String mobile_number_3, @Nullable String fathers_name, @Nullable String mother_husband_wife_name, @Nullable String village, @Nullable String post_office, @Nullable String thana, @Nullable String dristict, @Nullable String date_of_joining_job, @Nullable String old_workplace, @Nullable String old_workplace_2, @Nullable String date_of_joining_current_workplace, @Nullable String current_workplace, @Nullable String facebook_id, @Nullable String imo_id, @Nullable String whatsapp_id) {
+    public Contact(@Nullable String case_number, String name, @Nullable String identity_type, @Nullable String rank, @Nullable String bp_number, @Nullable String nid, @Nullable String date_of_birth, @Nullable String bank_account_number, @Nullable String mobile_number, @Nullable String mobile_number_2, @Nullable String mobile_number_3 , @Nullable String email, @Nullable String fathers_name, @Nullable String mother_husband_wife_name, @Nullable String village, @Nullable String post_office, @Nullable String thana, @Nullable String dristict, @Nullable String date_of_joining_job, @Nullable String old_workplace, @Nullable String old_workplace_2, @Nullable String date_of_joining_current_workplace, @Nullable String current_workplace, @Nullable String facebook_id, @Nullable String imo_id, @Nullable String whatsapp_id) {
         this.case_number = case_number;
         this.name = name;
         this.identity_type = identity_type;
@@ -137,6 +140,7 @@ public class Contact {
         this.mobile_number = mobile_number;
         this.mobile_number_2 = mobile_number_2;
         this.mobile_number_3 = mobile_number_3;
+        this.email = email;
         this.fathers_name = fathers_name;
         this.mother_husband_wife_name = mother_husband_wife_name;
         this.village = village;
@@ -261,6 +265,15 @@ public class Contact {
     }
 
     @Nullable
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(@Nullable String email) {
+        this.email = email;
+    }
+
+    @Nullable
     public String getFathers_name() {
         return fathers_name;
     }
@@ -369,21 +382,21 @@ public class Contact {
     }
 
     @Nullable
-    public String getWhatsapp_id() {
-        return whatsapp_id;
-    }
-
-    public void setWhatsapp_id(@Nullable String whatsapp_id) {
-        this.whatsapp_id = whatsapp_id;
-    }
-
-    @Nullable
     public String getImo_id() {
         return imo_id;
     }
 
     public void setImo_id(@Nullable String imo_id) {
         this.imo_id = imo_id;
+    }
+
+    @Nullable
+    public String getWhatsapp_id() {
+        return whatsapp_id;
+    }
+
+    public void setWhatsapp_id(@Nullable String whatsapp_id) {
+        this.whatsapp_id = whatsapp_id;
     }
 
     public String getDate() {

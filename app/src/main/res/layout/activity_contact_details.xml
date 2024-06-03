@@ -353,6 +353,34 @@
              android:layout_height="wrap_content"
              android:orientation="horizontal"
              android:layout_margin="5dp">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:fontFamily="@font/ador_regular"
+                 android:text="@string/email"
+                 android:textColor="@color/purple_700"
+                 android:textSize="18sp" />
+
+             <TextView
+                 android:id="@+id/email_tv_id"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="3sp"
+                 android:fontFamily="@font/ador_samibold"
+                 android:textColor="@color/purple_700"
+                 android:textSize="18sp"
+                 />
+         </LinearLayout>
+         <View
+             android:layout_width="match_parent"
+             android:layout_height="0.5sp"
+             android:background="@color/purple_700"/>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:layout_margin="5dp">
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"

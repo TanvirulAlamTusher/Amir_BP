@@ -110,6 +110,17 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this,BackupRestoreActivity.class));
                     return true;
                 }
+                if (item.getItemId() == R.id.developer_info_id){
+                    LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
+                    View view = inflater.inflate(R.layout.about_alert_dailog, null);
+
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+                    alertDialog.setView(view);
+                    alertDialog.create();
+                    alertDialog.show();
+
+                    return true;
+                }
                 return false;
             }
         });

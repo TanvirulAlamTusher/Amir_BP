@@ -5,7 +5,7 @@
     <item android:title="Backup/Restore"
         android:id="@+id/backup_restore_id"/>
     <item android:title="Developer Info"
-        android:id="@+id/developer_idfo_id"/>
+        android:id="@+id/developer_info_id"/>
 
 
 </menu>

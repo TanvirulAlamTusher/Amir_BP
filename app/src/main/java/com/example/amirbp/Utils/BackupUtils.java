@@ -11,7 +11,6 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
-import android.util.JsonReader;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
 
@@ -22,6 +21,7 @@ import com.example.amirbp.Model.Contact;
 import com.example.amirbp.Model.Note;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -154,7 +154,7 @@ public class BackupUtils {
     }
 
 
-    //restore
+   // restore
     public void restoreBackup(Uri backupUri, RestoreCallback callback) {
         try {
             // Read the backup data from the file
@@ -196,41 +196,42 @@ public class BackupUtils {
         }
     }
 
+private BackupData readBackupDataFromFile(Uri backupUri) throws IOException {
 
-    private BackupData readBackupDataFromFile(Uri backupUri) throws IOException {
         List<Contact> contacts = new ArrayList<>();
         List<Note> notes = new ArrayList<>();
 
+    InputStream inputStream = context.getContentResolver().openInputStream(backupUri);
+    if (inputStream != null) {
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+        com.google.gson.stream.JsonReader jsonReader = new JsonReader(inputStreamReader);
 
-        InputStream inputStream = context.getContentResolver().openInputStream(backupUri);
-        if (inputStream != null) {
-            InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
-            JsonReader jsonReader = new JsonReader(inputStreamReader);
-
-            jsonReader.beginObject();
-            while (jsonReader.hasNext()) {
-                String name = jsonReader.nextName();
-                if (name.equals("contacts")) {
-                    Type listType = new TypeToken<List<Contact>>() {}.getType();
-                    contacts = new Gson().fromJson(String.valueOf(jsonReader), listType);
-                } else if (name.equals("notes")) {
-                    Type listType = new TypeToken<List<Note>>() {}.getType();
-                    notes = new Gson().fromJson(String.valueOf(jsonReader), listType);
-                } else {
-                    jsonReader.skipValue();
-                }
+        jsonReader.beginObject();
+        while (jsonReader.hasNext()) {
+            String name = jsonReader.nextName();
+            if (name.equals("contacts")) {
+                Type listType = new TypeToken<List<Contact>>() {}.getType();
+                contacts = new Gson().fromJson(jsonReader, listType);
+            } else if (name.equals("notes")) {
+                Type listType = new TypeToken<List<Note>>() {}.getType();
+                notes = new Gson().fromJson(jsonReader, listType);
+            }  else {
+                jsonReader.skipValue();
             }
-            jsonReader.endObject();
-
-            jsonReader.close();
         }
-        inputStream.close();
+        jsonReader.endObject();
 
-        BackupData backupData = new BackupData();
-        backupData.setContacts(contacts);
-        backupData.setNotes(notes);
-        return backupData;
+        jsonReader.close();
     }
+    inputStream.close();
+
+    BackupData backupData = new BackupData();
+    backupData.setContacts(contacts);
+    backupData.setNotes(notes);
+    return backupData;
+
+
+}
 
     private boolean isContactExistsInDb(Contact contact) {
         AppDb appDataBase = AppDb.getInstance(context);

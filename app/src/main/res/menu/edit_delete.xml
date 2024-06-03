@@ -6,8 +6,6 @@
         />
     <item android:title="Delete"
         android:id="@+id/delete_id"
-        />
-    <item android:title="Download PDF"
-        android:id="@+id/download_pdf"
-        />
+
+       />
 </menu>

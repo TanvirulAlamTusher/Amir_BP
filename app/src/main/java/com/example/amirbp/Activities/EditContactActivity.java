@@ -57,6 +57,7 @@ public class EditContactActivity extends AppCompatActivity {
             String mobileNumber = binding.mobileNumberEditTextId.getText().toString();
             String mobileNumber2 = binding.mobileNumber2EditTextId.getText().toString();
             String mobileNumber3 = binding.mobileNumber3EditTextId.getText().toString();
+            String email = binding.emailEditTextId.getText().toString();
             String fathersName = binding.fathersNameEditTextId.getText().toString();
             String mothersHusbandWifeName = binding.mothersHusbandWifeNameEditTextId.getText().toString();
             String village = binding.villageEditTextId.getText().toString();
@@ -92,6 +93,7 @@ public class EditContactActivity extends AppCompatActivity {
             contact.mobile_number = mobileNumber;
             contact.mobile_number_2 = mobileNumber2;
             contact.mobile_number_3 = mobileNumber3;
+            contact.email = email;
             contact.fathers_name = fathersName;
             contact.mother_husband_wife_name = mothersHusbandWifeName;
             contact.village = village;
@@ -152,6 +154,7 @@ public class EditContactActivity extends AppCompatActivity {
                 binding.mobileNumberEditTextId.setText(contact.getMobile_number());
                 binding.mobileNumber2EditTextId.setText(contact.getMobile_number_2());
                 binding.mobileNumber3EditTextId.setText(contact.getMobile_number_3());
+                binding.emailEditTextId.setText(contact.getEmail());
                 binding.fathersNameEditTextId.setText(contact.getFathers_name());
                 binding.mothersHusbandWifeNameEditTextId.setText(contact.getMother_husband_wife_name());
                 binding.villageEditTextId.setText(contact.getVillage());

@@ -61,6 +61,7 @@ public class ContactAddActivity extends AppCompatActivity {
             String mobileNumber = binding.mobileNumberEditTextId.getText().toString();
             String mobileNumber2 = binding.mobileNumber2EditTextId.getText().toString();
             String mobileNumber3 = binding.mobileNumber3EditTextId.getText().toString();
+            String email = binding.emailEditTextId.getText().toString();
             String fathersName = binding.fathersNameEditTextId.getText().toString();
             String mothersHusbandWifeName = binding.mothersHusbandWifeNameEditTextId.getText().toString();
             String village = binding.villageEditTextId.getText().toString();
@@ -82,7 +83,7 @@ public class ContactAddActivity extends AppCompatActivity {
              return;
          }
              //insert data to database here
-            Contact contact = new Contact(caseNumber,name,indentityType,rank,bpNumber,nid,birthDay,bankAccountNumber,mobileNumber,mobileNumber2,mobileNumber3,fathersName,mothersHusbandWifeName,village,postOffice,thana,district,date_of_joining_job,oldWorksPlace,oldWorksPlace2,date_of_joining_current_workplace,currentWorksPlace,facebookId,imoid,whatsappId);
+            Contact contact = new Contact(caseNumber,name,indentityType,rank,bpNumber,nid,birthDay,bankAccountNumber,mobileNumber,mobileNumber2,mobileNumber3,email,fathersName,mothersHusbandWifeName,village,postOffice,thana,district,date_of_joining_job,oldWorksPlace,oldWorksPlace2,date_of_joining_current_workplace,currentWorksPlace,facebookId,imoid,whatsappId);
             contactViewModel.insertContact(contact);
             resetAllField();
 
