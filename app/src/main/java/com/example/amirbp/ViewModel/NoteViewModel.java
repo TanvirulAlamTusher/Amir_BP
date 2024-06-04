@@ -41,7 +41,7 @@ public class NoteViewModel extends ViewModel {
         return noteList;
     }
 
-    public MutableLiveData<Note> getContactInfoById() {
+    public MutableLiveData<Note> getNoteInfoById() {
         return noteInfo;
     }
 

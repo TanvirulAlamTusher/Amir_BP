@@ -67,7 +67,7 @@ public class EditNoteActivity extends AppCompatActivity {
     }
 
     private void observedata() {
-        noteViewModel.getContactInfoById().observe(EditNoteActivity.this,notes -> {
+        noteViewModel.getNoteInfoById().observe(EditNoteActivity.this,notes -> {
             if (notes != null) {
                binding.noteTitleId.setText(notes.getTitle());
                binding.noteEdittextId.setText(notes.getNotes());
