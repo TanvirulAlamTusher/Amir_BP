@@ -150,6 +150,10 @@ public class MainActivity extends AppCompatActivity {
        List<Contact> filteredList = new ArrayList<>();
        for (Contact contact : contactList){
            if(contact.getName().toLowerCase().contains(text.toLowerCase())
+                   || contact.getVillage().toLowerCase().contains(text.toLowerCase())
+                   || contact.getPost_office().toLowerCase().contains(text.toLowerCase())
+                   || contact.getFathers_name().toLowerCase().contains(text.toLowerCase())
+                   || contact.getMother_husband_wife_name().toLowerCase().contains(text.toLowerCase())
                    || contact.getThana().toLowerCase().contains(text.toLowerCase())
                    || contact.getDristict().toLowerCase().contains(text.toLowerCase())
                    || contact.getCase_number().toLowerCase().contains(text.toLowerCase())
